@@ -7,7 +7,7 @@ library(tidyverse)
 # read raw data
 df = read.csv("data/raw/pctl_of_inc_us_w2.csv")
 
-# newcolumn names
+# new column names
 lookup =c(`10%` = "pctl10", `25%` = "pctl25", 
           `50%` = "pctl50", `75%` = "pctl75", 
           `90%` = "pctl90", `95%` = "pctl95", 

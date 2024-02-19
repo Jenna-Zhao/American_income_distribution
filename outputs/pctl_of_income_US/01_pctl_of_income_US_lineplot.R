@@ -7,7 +7,7 @@ library(ggtext)
 library(grid)
 
 # load data
-df = read.csv("data/derived/01_pctl_for_all_and_prime_age.csv")
+df = read.csv("data/derived/01_pctl_of_income_US.csv")
 
 # drawing the line plot
 p = ggplot(df) + 
@@ -90,7 +90,7 @@ p = ggplot(df) +
 p_grob <- ggplotGrob(p)
 
 # open device to save plot
-png("outputs/pctl_of_income_US/pctl_plot.png", 
+png("outputs/pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
     width = 8.5, height = 3.5, units = "in",
     res = 300)
 ## draw the grob
