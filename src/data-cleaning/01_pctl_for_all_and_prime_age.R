@@ -34,5 +34,5 @@ df_clean$samp[df_clean$samp
               == "all_w2_pik"] = "All Workers"
 
 # save csv file
-write.csv(df_clean, file = "data/derived/01_pctl_of_for_all_and_prime_age")
+write.csv(df_clean, file = "data/derived/01_pctl_of_income_US.csv")
 
