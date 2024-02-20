@@ -90,7 +90,7 @@ p = ggplot(df) +
 p_grob <- ggplotGrob(p)
 
 # open device to save plot
-png("outputs/pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
+png("outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
     width = 8.5, height = 3.5, units = "in",
     res = 300)
 ## draw the grob
