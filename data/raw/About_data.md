@@ -4,7 +4,7 @@ The purpose of this file is to describe the main variables in the raw data based
 
 ## U.S. level
 
-We use `pctl_of_inc_us_w2.csv` dataset to analyze the total compensation for all workers and prime-age workers from 2005 to 2019. The main variables shows below:
+We use `pctl_of_inc_us_w2.csv` dataset to analyze the percentile of total compensation for all workers and prime-age workers from 2005 to 2019. The main variables shows below:
 
 -   year: the tax year of observations, from 2005 to 2019.
 
@@ -33,3 +33,7 @@ We use `pctl_of_inc_us_w2.csv` dataset to analyze the total compensation for all
 -   pce: standardized to 2012 pce index.
 
 -   pctl10_adj – pctl99_999_adj: pth percentile of income by adjusted dollars. We focused on the adjusted values.
+
+## State level
+
+We use `pctl_of_inc_state_w2.csv` dataset to analyze the total compensation for all workers and prime-age workers from 2005 to 2019. The main variables shows below:
