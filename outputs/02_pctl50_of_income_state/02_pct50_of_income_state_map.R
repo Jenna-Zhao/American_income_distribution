@@ -1,3 +1,4 @@
+# This code is used for drawing map of 50th percentile of income in 2019 for each state
 
 # load packages
 library(ggplot2)  

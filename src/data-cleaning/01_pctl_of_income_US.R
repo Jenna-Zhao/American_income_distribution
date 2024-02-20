@@ -8,18 +8,19 @@ library(tidyverse)
 df = read.csv("data/raw/pctl_of_inc_us_w2.csv")
 
 # new column names
-lookup =c(`10%` = "pctl10", `25%` = "pctl25", 
-          `50%` = "pctl50", `75%` = "pctl75", 
-          `90%` = "pctl90", `95%` = "pctl95", 
-          `98%` = "pctl98", `99%` = "pctl99")
+lookup =c(`10%` = "pctl10_adj", `25%` = "pctl25_adj", 
+          `50%` = "pctl50_adj", `75%` = "pctl75_adj", 
+          `90%` = "pctl90_adj", `95%` = "pctl95_adj", 
+          `98%` = "pctl98_adj", `99%` = "pctl99_adj")
 
 # data cleaning 
 df_clean = df %>%
   ## subset by rows
   filter(group_var == "xall", inc_var == "TC") %>% 
   ## subset by columns
-  select("year", "samp", "pctl10", "pctl25", "pctl50",
-         "pctl75", "pctl90", "pctl95", "pctl98", "pctl99") %>%
+  select("year", "samp", 
+         "pctl10_adj", "pctl25_adj", "pctl50_adj", "pctl75_adj", 
+         "pctl90_adj", "pctl95_adj", "pctl98_adj", "pctl99_adj") %>%
   ## change column names 
   rename(all_of(lookup)) %>%
   ## from wide to long table
