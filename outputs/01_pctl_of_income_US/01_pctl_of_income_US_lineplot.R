@@ -62,8 +62,8 @@ p = ggplot(df) +
     legend.text = element_text(size = 9, family = "sans"),
     legend.title = element_blank(),
     legend.key = element_blank(),
-    legend.position = c(.87, 1.37),
-    legend.spacing.x = unit(2, "pt"),
+    legend.position = c(.85, 1.35),
+    legend.spacing.x = unit(2.5, "pt"),
     legend.spacing.y = unit(1, "pt"),
     
     ## adjust axis text size, axis line colour and y-axis title 
@@ -77,6 +77,7 @@ p = ggplot(df) +
                                       margin = margin(l = -65)),
     
     ## adjust title/subtitle/caption size, position, face, colour and space
+    plot.title.position = "plot",
     plot.title = element_text(size = 11, hjust = 0, face = "bold", 
                               family = "sans",
                               margin = margin(10, 0, 1.5, 0, "pt")),
