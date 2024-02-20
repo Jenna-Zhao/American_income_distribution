@@ -1,4 +1,4 @@
-
+## This code is used for data cleaning to draw a map 
 # load package
 library(tidyverse)
 
@@ -11,12 +11,13 @@ df_50 = df %>%
   filter(group_var == "xall", inc_var == "TC", year == 2019) %>% 
   ## subset by columns
   select("year", "geo_abb", "pctl50_adj") %>%
+  ## generate a new category income by pctl50_adj
   mutate(Income = case_when(pctl50_adj <= 30000 ~ "< 30", 
                             pctl50_adj <= 35000 ~ "30 - 35",
                             pctl50_adj <= 40000 ~ "35 - 40",
                             pctl50_adj <= 45000 ~ "40 - 45",
                             pctl50_adj <= 50000 ~ "45 - 50",
-                            pctl50_adj >= 50000 ~ "> 50"))
+                            pctl50_adj >= 55000 ~ "> 50"))
 
 
 # save csv file
