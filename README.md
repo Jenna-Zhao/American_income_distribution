@@ -8,7 +8,7 @@ This project aims to provide a visualization of the distribution of American inc
 
 -   For U.S. level, we compared the percentile of total compensation for all workers with prime-age workers from 2005 to 2019.
 
--   For state level, we focused 50th percentile of total compensation in 2019 for all workers.
+-   For state level, we focused on the 50th percentile of total compensation in 2019 for all workers.
 
 ## Data
 
