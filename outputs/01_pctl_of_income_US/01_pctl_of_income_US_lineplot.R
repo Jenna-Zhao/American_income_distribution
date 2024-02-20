@@ -87,7 +87,7 @@ p = ggplot(df) +
   guides(colour = guide_legend(nrow = 2, byrow = TRUE)) 
 
 # Generate a ggplot2 plot grob.
-p_grob <- ggplotGrob(p)
+p_grob = ggplotGrob(p)
 
 # open device to save plot
 png("outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 

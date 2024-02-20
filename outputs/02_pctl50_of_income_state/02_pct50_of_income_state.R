@@ -9,7 +9,7 @@ library(tigris)
 # load data
 df = read.csv("data/derived/02_pctl50_of_income_state.csv")
 
-# load US map data
+# load US map data by using tigris package
 us_state_map = tigris::states(cb = T, resolution = "20m", class = "sf")
 us_state_map = tigris::shift_geometry(us_state_map, geoid_column = "GEOID", 
                                        position = "below")
@@ -18,47 +18,62 @@ us_state_map = tigris::shift_geometry(us_state_map, geoid_column = "GEOID",
 df_50_income_map = merge(x = us_state_map, y = df,
                          by.x = "STUSPS", by.y = "geo_abb")
 
-# change class to factor (legend order)
+# change class to factor (for legend order)
 df_50_income_map$Income = factor(df_50_income_map$Income,
                       levels = c("< 30", "30 - 35", "35 - 40",
                                  "40 - 45", "45 - 50", "> 50"))
 
+# set color
 col = rev(c("#005F73", "#00788D", "#0092A7", "#25ADC2", "#4EC8DE", "#6FE4FB"))
 
+# plot
 p = ggplot(df_50_income_map) +
+  ## fill state by income
   geom_sf(aes(fill = Income), colour = "white") +
+  ## add label to each state
+  geom_sf_text(aes(label = STUSPS),  check_overlap = TRUE, 
+               size = 1, colour = "#404040") +
+  ## remove scale by 5% on each side for continuous variables
   scale_x_continuous(expand = c(0, 0)) + 
+  ## reset fill colour
   scale_fill_manual(values = col) +
+  ## add labels (title, subtitle, legend title & caption)
   labs(title = "50th percentile of Income (2019)", 
        subtitle = "United States",
        fill = expression("Income (10" ^ 3* ")"),
        caption = "Sources: Percentiles of Income Module; Federal Reserve Bank of Minneapolis") + 
+  ## remove unnecessary lines (grid line & box)
   theme_void() + 
   theme(
-   plot.margin = margin(0, 0, 0, 1, unit = "pt"),
-   
-   legend.text = element_text(size = 7, family = "sans"),
-   legend.title = element_text(size = 7, hjust = -1, face = "bold", 
-                               family = "sans",
-                               margin = margin(10, 0, 1.5, 0, "pt")),
-   legend.justification = "right",
-   legend.spacing.x = unit(2, "pt"),
-   legend.spacing.y = unit(1, "pt"),
-   legend.box = "horizontal",
-   legend.key.size = unit(0.3, "cm"),
-   legend.margin = margin(0, 0, 265, -106, unit = "pt"),
-   
-   plot.title = element_text(size = unit(11, "pt"), hjust = 0, face = "bold", 
-                            family = "sans",
-                            margin = margin(10, 0, 1.5, 0, "pt")),
-   plot.subtitle = element_text(size = 9.5, hjust = 0, family = "sans",
-                               margin = margin(1, 0, 10, 0)),
-   plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040")) +
-  # make legend become 2 rows
+    ## adjust plot margin 
+    plot.margin = margin(0, 5, 0, 1, unit = "pt"),
+    
+    ## adjust size, family and position of legend text and title
+    legend.text = element_text(size = 7, family = "sans"),
+    legend.title = element_text(size = 7, hjust = -1, face = "bold", 
+                               family = "sans", margin = margin(10, 0, 1.5, 0, "pt")),
+    ## move legend to top right 
+    legend.justification = "right", 
+    legend.box = "horizontal",
+    legend.margin = margin(0, 0, 260, -106, unit = "pt"),
+    ## adjust space between legend key  
+    legend.spacing.x = unit(2, "pt"),
+    legend.spacing.y = unit(1, "pt"),
+    ## adjust space between size of legend key 
+    legend.key.size = unit(0.3, "cm"),
+    
+    ## adjust size, font, face and position of title, subtitle & cpation
+    plot.title = element_text(size = unit(11, "pt"), hjust = 0, face = "bold", 
+                              family = "sans", margin = margin(10, 0, 1.5, 0, "pt")),
+    plot.subtitle = element_text(size = 9.5, hjust = 0, family = "sans",
+                                 margin = margin(1, 0, 10, 0)),
+    plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040")) +
+  
+  ## make legend become 2 rows
   guides(fill = guide_legend(nrow = 2, byrow = TRUE, 
                              title.position = "top", title.hjust = 0.5)) 
 
-# Generate a ggplot2 plot grob.
+# Generate a ggplot2 plot grob
 p_grob = ggplotGrob(p)
 
 # open device to save plot
