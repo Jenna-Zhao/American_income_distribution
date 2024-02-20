@@ -1,15 +1,19 @@
-# This code is used for drawing the percentile of income from 2005 to 2019
+# -----------------------------------------------------------
+# Script Name: 01_pctl_of_income_US_lineplot
+# Purpose: This script is used to draw
+# the percentile of income from 2005 to 2019
+# -----------------------------------------------------------
 
-# load packages
+# load packages------------------------------------------------
 library(ggplot2)
 library(ggthemes)
 library(ggtext)
 library(grid)
 
-# load data
+# load data------------------------------------------------
 df = read.csv("data/derived/01_pctl_of_income_US.csv")
 
-# drawing the line plot
+# drawing the line plot------------------------------------------------
 p = ggplot(df) + 
   geom_line(aes(x = year, y = value, col = Percentile)) + ## add line
   geom_point(aes(x = year, y = value, col = Percentile)) + ## add point
@@ -87,10 +91,10 @@ p = ggplot(df) +
   # make legend become 2 rows
   guides(colour = guide_legend(nrow = 2, byrow = TRUE)) 
 
-# Generate a ggplot2 plot grob.
+# Generate a ggplot2 plot grob
 p_grob = ggplotGrob(p)
 
-# open device to save plot
+# open device to save plot------------------------------------------------
 png("outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
     width = 8.5, height = 3.5, units = "in",
     res = 300)

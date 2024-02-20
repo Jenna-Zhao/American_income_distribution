@@ -1,6 +1,11 @@
-# This code is used for drawing map of 50th percentile of income in 2019 for each state
+# -----------------------------------------------------------
+# Script Name: 02_pct50_of_income_state_map
+# Purpose: This script is used to draw
+# map of 50th percentile of income in 2019 for each state
+# -----------------------------------------------------------
 
-# load packages
+# load packages -------------------------
+
 library(ggplot2)  
 library(ggthemes)
 library(grid)
@@ -9,15 +14,16 @@ library(dplyr)
 library(sf)
 library(tigris)
 
-# load data
+# Map data ----------------------------
+# load data 
 df = read.csv("data/derived/02_pctl50_of_income_state.csv")
 
-# load US map data by using tigris package
+# load US map data by using tigris package 
 us_state_map = tigris::states(cb = T, resolution = "20m", class = "sf")
 us_state_map = tigris::shift_geometry(us_state_map, geoid_column = "GEOID", 
                                        position = "below")
 
-# merge income data with map data
+# merge income data with map data by state abbr
 df_50_income_map = merge(x = us_state_map, y = df,
                          by.x = "STUSPS", by.y = "geo_abb")
 
@@ -29,7 +35,7 @@ df_50_income_map$Income = factor(df_50_income_map$Income,
 # set color
 col = rev(c("#005F73", "#00788D", "#0092A7", "#25ADC2", "#4EC8DE", "#6FE4FB"))
 
-# plot
+# plot ----------------------------
 p = ggplot(df_50_income_map) +
   ## fill state by income
   geom_sf(aes(fill = Income), colour = "white") +
@@ -58,19 +64,20 @@ p = ggplot(df_50_income_map) +
     ## move legend to top right 
     legend.justification = "right", 
     legend.box = "horizontal",
-    legend.margin = margin(0, 0, 260, -106, unit = "pt"),
+    legend.margin = margin(0, 0, 250, -106, unit = "pt"),
     ## adjust space between legend key  
     legend.spacing.x = unit(2, "pt"),
     legend.spacing.y = unit(1, "pt"),
     ## adjust space between size of legend key 
     legend.key.size = unit(0.3, "cm"),
     
-    ## adjust size, font, face and position of title, subtitle & cpation
+    ## adjust size, font, face and position of title, subtitle & caption
     plot.title = element_text(size = unit(11, "pt"), hjust = 0, face = "bold", 
                               family = "sans", margin = margin(10, 0, 1.5, 0, "pt")),
     plot.subtitle = element_text(size = 9.5, hjust = 0, family = "sans",
                                  margin = margin(1, 0, 10, 0)),
-    plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040")) +
+    plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040",
+                                margin = margin(1, 0, 1, 0, "pt"))) +
   
   ## make legend become 2 rows
   guides(fill = guide_legend(nrow = 2, byrow = TRUE, 
@@ -79,10 +86,10 @@ p = ggplot(df_50_income_map) +
 # Generate a ggplot2 plot grob
 p_grob = ggplotGrob(p)
 
-# open device to save plot
+# open device to save plot ----------------------------
 png("outputs/02_pctl50_of_income_state/02_50pctl_of_income_state_map.png", 
-    width = 4.5, height = 3.7, units = "in",
-    res = 300)
+    width = 4.32, height = 3.5, units = "in",
+    res = 500)
 
 ## draw the grob
 grid.draw(p_grob)

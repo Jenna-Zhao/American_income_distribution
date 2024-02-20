@@ -1,13 +1,16 @@
-# Following codes clean the raw data "pctl_of_inc_us_w2" to help us draw plots
-# more conveniently (drived data "01_pctl_for_all_and_prime_age")
+# -----------------------------------------------------------
+# Script Name: 01_pctl_of_income_US
+# Purpose: This script is used to clean the raw data "pctl_of_inc_us_w2" 
+# help us draw plots more conveniently 
+# -----------------------------------------------------------
 
-# load package
+# load package ------------------------------------------------
 library(tidyverse)
 
-# read raw data
+# read raw data ------------------------------------------------
 df = read.csv("data/raw/pctl_of_inc_us_w2.csv")
 
-# new column names
+# new column names ------------------------------------------------
 lookup =c(`10%` = "pctl10_adj", `25%` = "pctl25_adj", 
           `50%` = "pctl50_adj", `75%` = "pctl75_adj", 
           `90%` = "pctl90_adj", `95%` = "pctl95_adj", 
@@ -34,6 +37,6 @@ df_clean$samp[df_clean$samp
 df_clean$samp[df_clean$samp 
               == "all_w2_pik"] = "All Workers"
 
-# save csv file
+# save csv file ------------------------------------------------
 write.csv(df_clean, file = "data/derived/01_pctl_of_income_US.csv")
 
