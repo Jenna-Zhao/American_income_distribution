@@ -66,7 +66,7 @@ p = ggplot(df) +
     legend.text = element_text(size = 9, family = "sans"),
     legend.title = element_blank(),
     legend.key = element_blank(),
-    legend.position = c(.85, 1.35),
+    legend.position = c(.85, 1.255),
     legend.spacing.x = unit(2.5, "pt"),
     legend.spacing.y = unit(1, "pt"),
     
@@ -96,7 +96,7 @@ p_grob = ggplotGrob(p)
 
 # open device to save plot------------------------------------------------
 png("outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
-    width = 8.5, height = 3.5, units = "in",
+    width = 8.5, height = 4.3, units = "in",
     res = 300)
 ## draw the grob
 grid.draw(p_grob)
@@ -108,12 +108,12 @@ grid.rect(x = unit(0, "npc"), y = 1,
           just = c("left", "top"),
           gp = gpar(fill = "#E3120B", lwd = 0))
 ## add marker for panels
-grid.rect(x = 0, y = unit(.825, "npc"),
-          width = unit(10, "points"), height = unit(1, "points"), 
+grid.rect(x = 0, y = unit(.853, "npc"),
+          width = unit(10, "points"), height = unit(1.3, "points"), 
           just = c("left", "top"),
           gp = gpar(fill = "#E3120B", lwd = 0))
-grid.rect(x = unit(0.5, "npc") + unit(31, "points"), y = unit(.825, "npc"),
-          width = unit(10, "points"), height = unit(1, "points"), 2, 
+grid.rect(x = unit(0.5, "npc") + unit(32, "points"), y = unit(.853, "npc"),
+          width = unit(10, "points"), height = unit(1.3, "points"), 2, 
           just = c("left", "top"),
           gp = gpar(fill = "#E3120B", lwd = 0))
 # Close the device
