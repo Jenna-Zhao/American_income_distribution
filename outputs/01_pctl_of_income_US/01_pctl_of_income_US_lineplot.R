@@ -19,7 +19,7 @@ p = ggplot(df) +
   geom_point(aes(x = year, y = value, col = Percentile)) + ## add point
   facet_wrap(~ samp) + ## facet by `samp` variable
   ## add title, subtitle, caption and axis titles
-  labs(title = "Percentile of Income from 2005 to 2020",
+  labs(title = "Percentiles of total compensation from 2005 to 2020",
        subtitle = "United States",
        x = "", y = expression("Income (10" ^ 4* ")"),
        caption = "Sources: Percentiles of Income Module; Federal Reserve Bank of Minneapolis") +

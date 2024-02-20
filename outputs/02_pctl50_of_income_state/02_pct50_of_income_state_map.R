@@ -47,7 +47,7 @@ p = ggplot(df_50_income_map) +
   ## reset fill colour
   scale_fill_manual(values = col) +
   ## add labels (title, subtitle, legend title & caption)
-  labs(title = "50th percentile of Income (2019)", 
+  labs(title = "50th percentile of total compensation (2019)", 
        subtitle = "United States",
        fill = expression("Income (10" ^ 3* ")"),
        caption = "Sources: Percentiles of Income Module; Federal Reserve Bank of Minneapolis") + 
@@ -55,32 +55,32 @@ p = ggplot(df_50_income_map) +
   theme_void() + 
   theme(
     ## adjust plot margin 
-    plot.margin = margin(0, 5, 0, 1, unit = "pt"),
+    plot.margin = margin(0, 6, 0, 0, unit = "pt"),
     
     ## adjust size, family and position of legend text and title
-    legend.text = element_text(size = 7, family = "sans"),
-    legend.title = element_text(size = 7, hjust = -1, face = "bold", 
+    legend.text = element_text(size = 5, family = "sans"),
+    legend.title = element_text(size = 5, hjust = -1, face = "bold", 
                                family = "sans", margin = margin(10, 0, 1.5, 0, "pt")),
     ## move legend to top right 
     legend.justification = "right", 
     legend.box = "horizontal",
-    legend.margin = margin(0, 0, 250, -106, unit = "pt"),
+    legend.margin = margin(0, 0, 200, -37, unit = "pt"),
     ## adjust space between legend key  
     legend.spacing.x = unit(2, "pt"),
     legend.spacing.y = unit(1, "pt"),
     ## adjust space between size of legend key 
-    legend.key.size = unit(0.3, "cm"),
+    legend.key.size = unit(0.2, "cm"),
     
     ## adjust size, font, face and position of title, subtitle & caption
-    plot.title = element_text(size = unit(11, "pt"), hjust = 0, face = "bold", 
-                              family = "sans", margin = margin(10, 0, 1.5, 0, "pt")),
-    plot.subtitle = element_text(size = 9.5, hjust = 0, family = "sans",
-                                 margin = margin(1, 0, 10, 0)),
+    plot.title = element_text(size = unit(9.5, "pt"), hjust = 0, face = "bold", 
+                              family = "sans", margin = margin(7, 0, 1.5, 0, "pt")),
+    plot.subtitle = element_text(size = unit(8, "pt"), hjust = 0, family = "sans",
+                                 margin = margin(1, 0, 1, 0)),
     plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040",
-                                margin = margin(1, 0, 1, 0, "pt"))) +
+                                margin = margin(2.5, 0, 1, 0, "pt"))) +
   
   ## make legend become 2 rows
-  guides(fill = guide_legend(nrow = 2, byrow = TRUE, 
+  guides(fill = guide_legend(nrow = 3, byrow = TRUE, 
                              title.position = "top", title.hjust = 0.5)) 
 
 # Generate a ggplot2 plot grob
@@ -88,7 +88,7 @@ p_grob = ggplotGrob(p)
 
 # open device to save plot ----------------------------
 png("outputs/02_pctl50_of_income_state/02_50pctl_of_income_state_map.png", 
-    width = 4.32, height = 3.5, units = "in",
+    width = 3.95, height = 2.94, units = "in",
     res = 500)
 
 ## draw the grob
