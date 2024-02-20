@@ -2,6 +2,8 @@
 # load packages
 library(ggplot2)  
 library(ggthemes)
+library(grid)
+library(ggtext)
 library(dplyr)
 library(sf)
 library(tigris)
