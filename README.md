@@ -4,8 +4,6 @@
 
 <!-- badges: end -->
 
-## Aim
-
 This project aims to provide a visualization of the distribution of American income for both U.S. and state level.
 
 -   For U.S. level, we compared the percentile of total compensation for all workers with prime-age workers from 2005 to 2019.
