@@ -19,9 +19,9 @@ p = ggplot(df) +
   geom_point(aes(x = year, y = value, col = Percentile)) + ## add point
   facet_wrap(~ samp) + ## facet by `samp` variable
   ## add title, subtitle, caption and axis titles
-  labs(title = "Percentiles of total compensation from 2005 to 2020",
-       subtitle = "United States",
-       x = "", y = expression("Income (10" ^ 4* ")"),
+  labs(title = "Percentiles of total compensation",
+       subtitle = "United States, in thousands of USD, 2005-2019",
+       x = "", y = "",
        caption = "Sources: Percentiles of Income Module; Federal Reserve Bank of Minneapolis") +
   ## adjust texts and breaks in x-axis and y-axis
   scale_x_continuous(expand = c(0, 0.8), 
@@ -32,12 +32,12 @@ p = ggplot(df) +
                      expand = c(0, 0),
                      limits = c(0, 345000),
                      breaks = seq(0, 340000, 100000),
-                     labels = c("", "10", "20", "30")) + 
+                     labels = c("", "100", "200", "300")) + 
   ## change line colour
   scale_colour_economist() + 
   theme(
     ## set plot margin
-    plot.margin = margin(t = 0, r = 2, b = 0, l = 0, unit = "pt"),
+    plot.margin = margin(t = 0, r = -43, b = 0, l = 0, unit = "pt"),
     
     ## remove background colour
     plot.background = element_rect(fill = "white"),
@@ -45,7 +45,7 @@ p = ggplot(df) +
     ## adjust panel title and relative space
     strip.background = element_rect(color = NA, fill = NA), 
     strip.placement = "outside",
-    strip.text = element_text(size = 8, margin = margin(6, 0 ,20, 0), 
+    strip.text = element_text(size = 8, margin = margin(6, 0, 10, 0), 
                               hjust = 0, family = "sans"),
     strip.clip = "off",
     
@@ -63,10 +63,10 @@ p = ggplot(df) +
     ## remove background colour, text size, 
     ## remove title, change position and adjust space
     legend.background = element_blank(), 
-    legend.text = element_text(size = 9, family = "sans"),
+    legend.text = element_text(size = 7.5, family = "sans"),
     legend.title = element_blank(),
     legend.key = element_blank(),
-    legend.position = c(.85, 1.255),
+    legend.position = c(.85, 1.2),
     legend.spacing.x = unit(2.5, "pt"),
     legend.spacing.y = unit(1, "pt"),
     
@@ -74,17 +74,14 @@ p = ggplot(df) +
     axis.text.x = element_text(size = 7, family = "sans"),
     axis.line.x  = element_line(color = "black", linewidth = unit(.4, "pt")),
     axis.ticks.y = element_blank(),
-    axis.text.y.right = element_text(hjust = -1.3, vjust = -.5, 
+    axis.text.y.right = element_text(hjust = -1.2, vjust = -.5, 
                                      size = 7, family = "sans"),
-    axis.title.y.right = element_text(vjust = 1.1, hjust = -1, angle = 0,
-                                      size = 7, family = "sans",
-                                      margin = margin(l = -65)),
     
     ## adjust title/subtitle/caption size, position, face, colour and space
     plot.title.position = "plot",
     plot.title = element_text(size = 11, hjust = 0, face = "bold", 
                               family = "sans",
-                              margin = margin(10, 0, 1.5, 0, "pt")),
+                              margin = margin(10, 0, 3, 0, "pt")),
     plot.subtitle = element_text(size = 9.5, hjust = 0, family = "sans",
                                  margin = margin(1, 0, 10, 0)),
     plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040")) +
@@ -96,7 +93,7 @@ p_grob = ggplotGrob(p)
 
 # open device to save plot------------------------------------------------
 png("outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
-    width = 8.5, height = 4.3, units = "in",
+    width = 7.3, height = 4.3, units = "in",
     res = 300)
 ## draw the grob
 grid.draw(p_grob)
@@ -108,12 +105,12 @@ grid.rect(x = unit(0, "npc"), y = 1,
           just = c("left", "top"),
           gp = gpar(fill = "#E3120B", lwd = 0))
 ## add marker for panels
-grid.rect(x = 0, y = unit(.853, "npc"),
-          width = unit(10, "points"), height = unit(1.3, "points"), 
+grid.rect(x = 0, y = unit(.85, "npc"),
+          width = unit(11, "points"), height = unit(1.3, "points"), 
           just = c("left", "top"),
           gp = gpar(fill = "#E3120B", lwd = 0))
-grid.rect(x = unit(0.5, "npc") + unit(32, "points"), y = unit(.853, "npc"),
-          width = unit(10, "points"), height = unit(1.3, "points"), 2, 
+grid.rect(x = unit(0.5, "npc") + unit(32.5, "points"), y = unit(.85, "npc"),
+          width = unit(10.5, "points"), height = unit(1.3, "points"), 2, 
           just = c("left", "top"),
           gp = gpar(fill = "#E3120B", lwd = 0))
 # Close the device
