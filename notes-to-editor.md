@@ -1,65 +1,68 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Reflective Summary
 
-## style guidelines
+## Style guidelines
 
-The project follows the instructions of web visualization in The Economist style guide, mainly:
+The project follows the instructions for web visualization in The
+Economist style guide, mainly:
 
--   White background;
+-   White background for plot and panel;
 
--   Only remain major grid lines for x-axis or no grid lines for map;
+-   Only remain major grid lines for the x-axis or no grid line for the
+    map;
 
--   Tile, sub title and caption are left aligned with grid lines;
+-   Add a rotated tag and markers for each panel;
 
--   No x-axis title, y-axis ticks and y-axis line;
+-   Chart size is 595px for the width;
 
--   y-axis title and text is right aligned with the grid lines;
+-   Title, subtitle, panel headings, legend text and source text have
+    different typefaces and size;
 
--   Legend is top aligned with the title;
+-   Use standard web as chart dimensions and also refer to panel charts;
 
--   Space between various plot elements;
-
--   Text size, colour, font and family;
-
--   Colors of elements;
-
--   Chart Sizes with 595 px as width;
-
--   Add econ red header and markers.
+-   Use a web chart palette.
 
 ## Guidelines are met or not met:
 
 Following guidelines are met:
 
--   White background;
+-   White background and remove unnecessary grid lines;
 
--   Remain the major grid lines for x-axis and no grid lines for map.
+-   Add a rotated tag and markers for each panel;
 
--   Tile, sub title and caption are left aligned with grid lines;
+-   Chart width is 595px for the final report;
 
--   No axis title and y-axis text is right aligned with the grid lines;
+-   The size and font of elements;
 
--   Text size, font and colour ;
+-   Alignments between elements;
 
--   Legend is top aligned with the title;
+-   No axis title, axis line;
 
--   Colors of elements;
+-   Panel spacing is 24pts.
 
--   Header and markers.
-
-Following guidelines need further adjust:
+Following guidelines need further adjustment:
 
 -   Used "sans" as typeface rather than "econ sans";
 
--   Space between elements;
+-   Margins between elements;
 
--   Chart sizes not with width 332 and height 165.
+-   Plot width didn't build on 332pts, so the output size looks
+    different than expected;
 
-## Any alterations
+-   Use `scale_color_economist()` to adjust the colour of lines as there
+    are more than the provided colour in the palette.
 
--   Maybe change the map plot to hexagons map with clear values outlined. Therefore, it will be easier to compare the difference between states;
+## Further alterations
 
--   Change text font;
+Firstly, adjust elements to ensure consistency with the guidelines. It
+includes changing the text typeface to "econ sans", modifying the
+margins of elements, and altering line colors.
 
--   Adjust space between elements;
-
--   Adjust chart size.
+Secondly, comparing values becomes challenging when two states have
+similar median incomes. Hence, adjusting the map to show these
+differences may improve the clarity and effectiveness of the analysis.
