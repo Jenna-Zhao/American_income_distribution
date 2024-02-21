@@ -7,7 +7,6 @@
 # load packages------------------------------------------------
 library(ggplot2)
 library(ggthemes)
-library(ggtext)
 library(grid)
 
 # load data------------------------------------------------

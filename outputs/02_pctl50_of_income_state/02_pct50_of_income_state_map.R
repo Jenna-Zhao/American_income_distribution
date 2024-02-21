@@ -7,9 +7,7 @@
 # load packages -------------------------
 
 library(ggplot2)  
-library(ggthemes)
 library(grid)
-library(ggtext)
 library(dplyr)
 library(sf)
 library(tigris)
@@ -55,14 +53,15 @@ p = ggplot(df_50_income_map) +
   theme_void() + 
   theme(
     ## adjust plot margin 
-    plot.margin = margin(0, 0, 0, 0, unit = "pt"),
+    plot.margin = margin(0, 5, 0, -33.5, unit = "pt"),
     
     ## adjust size, family and position of legend text and title
     legend.text = element_text(size = 7.5, family = "sans"),
     ## move legend to top right 
     legend.justification = "right", 
     legend.box = "horizontal",
-    legend.margin = margin(0, 0, 355, -83, unit = "pt"),
+    legend.margin = margin(0, 1, 355, -83, unit = "pt"),
+    legend.position = c(1, 0.5),
     ## adjust space between legend key  
     legend.spacing.x = unit(2, "pt"),
     legend.spacing.y = unit(1, "pt"),
@@ -71,7 +70,7 @@ p = ggplot(df_50_income_map) +
     
     ## adjust size, font, face and position of title, subtitle & caption
     plot.title = element_text(size = unit(11, "pt"), hjust = 0, face = "bold", 
-                              family = "sans", margin = margin(7, 0, 1.5, 0, "pt")),
+                              family = "sans", margin = margin(10, 0, 3, 0, "pt")),
     plot.subtitle = element_text(size = unit(9.5, "pt"), hjust = 0, family = "sans",
                                  margin = margin(1, 0, 1, 0)),
     plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040",
@@ -86,7 +85,7 @@ p_grob = ggplotGrob(p)
 
 # open device to save plot ----------------------------
 png("outputs/02_pctl50_of_income_state/02_50pctl_of_income_state_map.png", 
-    width = 7.3, height = 5, units = "in",
+    width = 7.15, height = 5, units = "in",
     res = 500)
 
 ## draw the grob
