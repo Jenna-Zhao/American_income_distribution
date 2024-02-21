@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # Script Name: 02_pct50_of_income_state_map
 # Purpose: This script is used to draw
-# map of 50th percentile of income in 2019 for each state
+# map of median income in 2019 for each state
 # -----------------------------------------------------------
 
 # load packages -------------------------
@@ -45,8 +45,8 @@ p = ggplot(df_50_income_map) +
   ## reset fill colour
   scale_fill_manual(values = col) +
   ## add labels (title, subtitle, legend title & caption)
-  labs(title = "50th percentile of total compensation", 
-       subtitle = "United States, United States, in thousands of USD, 2019",
+  labs(title = "Median total compensation", 
+       subtitle = "United States, in thousands of USD, 2019",
        fill = "",
        caption = "Sources: Percentiles of Income Module; Federal Reserve Bank of Minneapolis") + 
   ## remove unnecessary lines (grid line & box)
