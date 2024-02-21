@@ -1,27 +1,18 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Reflective Summary
 
 ## Style guidelines
 
-The project follows the instructions for web visualization in The
-Economist style guide, mainly:
+The project follows the instructions for web visualization in The Economist style guide, mainly:
 
 -   White background for plot and panel;
 
--   Only remain major grid lines for the x-axis or no grid line for the
-    map;
+-   Only remain major grid lines for the x-axis or no grid line for the map;
 
 -   Add a rotated tag and markers for each panel;
 
 -   Chart size is 595px for the width;
 
--   Title, subtitle, panel headings, legend text and source text have
-    different typefaces and size;
+-   Title, subtitle, panel headings, legend text and source text have different typefaces and size;
 
 -   Use standard web as chart dimensions and also refer to panel charts;
 
@@ -51,18 +42,12 @@ Following guidelines need further adjustment:
 
 -   Margins between elements;
 
--   Plot width didn't build on 332pts, so the output size looks
-    different than expected;
+-   Plot width didn't build on 332pts, so the output size looks different than expected;
 
--   Use `scale_color_economist()` to adjust the colour of lines as there
-    are more than the provided colour in the palette.
+-   Use `scale_color_economist()` to adjust the colour of lines as there are more than the provided colour in the palette.
 
 ## Further alterations
 
-Firstly, adjust elements to ensure consistency with the guidelines. It
-includes changing the text typeface to "econ sans", modifying the
-margins of elements, and altering line colors.
+Firstly, adjust elements to ensure consistency with the guidelines. It includes changing the text typeface to "econ sans", modifying the margins of elements, and altering line colors.
 
-Secondly, comparing values becomes challenging when two states have
-similar median incomes. Hence, adjusting the map to show these
-differences may improve the clarity and effectiveness of the analysis.
+Secondly, comparing values becomes challenging when two states have similar median incomes. Hence, adjusting the map to show these differences may improve the clarity and effectiveness of the analysis.
