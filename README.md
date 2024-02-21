@@ -21,11 +21,11 @@ All these files are derived from "Percentiles of income module" of [Income Distr
 
 The [**derived**](data/derived) folder contains processed data, which are used for drawing plots (refers to [**outputs**](outputs)). Similarly, please refer to [derived_data.md](data/derived/derived_data.md) for derived process.
 
-The [**data-cleaning**](src/data-cleaning) folder contains scripts used to clean raw data and generate derived data. Each script is named after the derived data it generates, making it easy to identify. The data processing primarily relies on the `dylpr` package.
+The [**data-cleaning**](src/data-cleaning) folder contains scripts used to clean raw data and generate derived data. Each script is named after the derived data it generates, making it easy to identify. The data processing primarily relies on the `dylpr` package and it could be installed by using `install.packages()` function.
 
 ## Outputs
 
-The [**outputs**](outputs) folder contains plots and corresponding script. Each plot and script name is directly related to the derived dataset it represents.
+The [**outputs**](outputs) folder contains plots and corresponding scripts. All drawing processes are presented in related scripts. Each plot and script name are directly related to the derived dataset it represents.
 
 -   At the U.S. level analysis, we've generated facet line plots to compare total compensation. The script relies on packages, including `ggplot2`, `ggthemes` and `grid` to execute the visualizations.
 
