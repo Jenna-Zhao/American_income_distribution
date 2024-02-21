@@ -94,7 +94,7 @@ p_grob = ggplotGrob(p)
 # open device to save plot------------------------------------------------
 png("outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png", 
     width = 7.3, height = 4.3, units = "in",
-    res = 300)
+    res = 500)
 ## draw the grob
 grid.draw(p_grob)
 ## add rotated tag
