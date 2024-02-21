@@ -1,0 +1,19 @@
+---
+title: "American Income Distribution and Dynamics"
+format: pdf
+editor: visual
+project:
+    execute-dir: project
+---
+
+The United States (U.S.) is one of the largest economies in the world and holds the highest [Gross Domestic Product(GDP)](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)#Table). Analyzing the distribution and dynamics of income within the U.S. provides insights into the economic, social, and policy-related aspects of the country.
+
+From 2005 to 2019, all percentiles of total compensation for U.S. workers show an upward trend. However, the noticeable dip around 2008 likely reflects the impact of the [global financial crisis](https://en.wikipedia.org/wiki/2007%E2%80%932008_financial_crisis), which resulted in widespread reduced earnings. Over these years, the total compensation of higher-income earners, especially those in the 98th and 99th percentiles, increased more significantly compared to those in the lower percentiles. This disparity widens the gap in income distribution. These trends are consistent for all workers and prime-age workers, and prime-age workers generally earn more across all percentiles.
+
+![](../outputs/01_pctl_of_income_US/01_pctl_of_income_US_lineplot.png){fig-align="center" width="500"}
+
+There is a clear regional pattern in median income as well. Coastal states, particularly in the Northeast and the West, display higher median earnings over \$40,000. In contrast, many states in the South and the Midwest show lower median incomes below \$35,000. This distribution reflects the economic diversity of the U.S., influenced by many factors, including industrial composition, local economic policies, and cost of living.
+
+![](../outputs/02_pctl50_of_income_state/02_50pctl_of_income_state_map.png){fig-align="center" width="500"}
+
+In conclusion, this article compares the disparities in total compensation between high and low earners in the U.S., as well as income difference across different states. The findings show that the income gap is growing and significant regional variations in earnings.
