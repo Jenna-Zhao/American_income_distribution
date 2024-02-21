@@ -38,7 +38,7 @@ We use [pctl_of_inc_us_w2.csv](data/raw/pctl_of_inc_us_w2.csv) dataset to analyz
 
 ## State level
 
-We use [pctl_of_inc_state_w2.csv](data/raw/pctl_of_inc_state_w2.csv) dataset to analyze the 50th percentile of total compensation in 2019 for all workers. The main variables shows below:
+We use [pctl_of_inc_state_w2.csv](data/raw/pctl_of_inc_state_w2.csv) dataset to analyze the median (50th percentile) total compensation in 2019 for all workers. The main variables shows below:
 
 -   `year`: the tax year of observations, from 2005 to 2019. We focused on year 2019.
 
@@ -62,4 +62,4 @@ We use [pctl_of_inc_state_w2.csv](data/raw/pctl_of_inc_state_w2.csv) dataset to 
 
 -   `pce`: standardized to 2012 Personal Consumption Expenditures (PCE) index.
 
--   `pctl10_adj` – `pctl98_adj`: p-th percentile of income by adjusted dollars. We focused on the 50th percentile of adjusted values.
+-   `pctl10_adj` – `pctl98_adj`: p-th percentile of income by adjusted dollars. We focused on the median (50th percentile) adjusted values.

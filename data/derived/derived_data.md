@@ -24,7 +24,7 @@ The script [01_pctl_of_income_US.R](src/data-cleaning/01_pctl_of_income_US.R) co
 
 ## State level
 
-For the state level, we want to plot a map to show the 50th percentile of total compensation for all workers in 2019. The steps to clean the [raw data](data/raw/pctl_of_inc_state_w2) are as follows:
+For the state level, we want to plot a map to show the median total compensation for all workers in 2019. The steps to clean the [raw data](data/raw/pctl_of_inc_state_w2) are as follows:
 
 -   Load data by using `read.csv()` function.
 
