@@ -39,7 +39,7 @@ p = ggplot(df_50_income_map) +
   geom_sf(aes(fill = Income), colour = "white") +
   ## add label to each state
   geom_sf_text(aes(label = STUSPS),  check_overlap = TRUE, 
-               size = 2, colour = "#404040") +
+               size = 2, colour = "#404040", family = "sans") +
   ## remove scale by 5% on each side for continuous variables
   scale_x_continuous(expand = c(0, 0)) + 
   ## reset fill colour
@@ -53,7 +53,7 @@ p = ggplot(df_50_income_map) +
   theme_void() + 
   theme(
     ## adjust plot margin 
-    plot.margin = margin(0, 5, 0, -33.5, unit = "pt"),
+    plot.margin = margin(0, 5, 0, -34.5, unit = "pt"),
     
     ## adjust size, family and position of legend text and title
     legend.text = element_text(size = 7.5, family = "sans"),
@@ -74,7 +74,7 @@ p = ggplot(df_50_income_map) +
     plot.subtitle = element_text(size = unit(9.5, "pt"), hjust = 0, family = "sans",
                                  margin = margin(1, 0, 1, 0)),
     plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040",
-                                margin = margin(2.5, 0, 1, 0, "pt"))) +
+                                family = "sans", margin = margin(2.5, 0, 1, 0, "pt"))) +
   
   ## make legend become 2 rows
   guides(fill = guide_legend(nrow = 2, byrow = TRUE, 

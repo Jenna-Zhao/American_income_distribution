@@ -83,7 +83,8 @@ p = ggplot(df) +
                               margin = margin(10, 0, 3, 0, "pt")),
     plot.subtitle = element_text(size = 9.5, hjust = 0, family = "sans",
                                  margin = margin(1, 0, 10, 0)),
-    plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, colour = "#404040")) +
+    plot.caption = element_text(hjust = 0, vjust = 5, size = 6.5, 
+                                family = "sans", colour = "#404040")) +
   # make legend become 2 rows
   guides(colour = guide_legend(nrow = 2, byrow = TRUE)) 
 
