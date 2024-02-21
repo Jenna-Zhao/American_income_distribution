@@ -40,7 +40,7 @@ We use [pctl_of_inc_us_w2.csv](data/raw/pctl_of_inc_us_w2.csv) dataset to analyz
 
 We use [pctl_of_inc_state_w2.csv](data/raw/pctl_of_inc_state_w2.csv) dataset to analyze the median (50th percentile) total compensation in 2019 for all workers. The main variables shows below:
 
--   `year`: the tax year of observations, from 2005 to 2019. We focused on year 2019.
+-   `year`: the tax year of observations, from 2005 to 2019. We focused on year 2019 since it is the latest data.
 
 -   `level`: "pik" refers to individual-level income of form W-2.
 
