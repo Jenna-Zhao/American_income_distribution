@@ -27,9 +27,9 @@ The [**data-cleaning**](src/data-cleaning) folder contains scripts used to clean
 
 The [**outputs**](outputs) folder contains plots and corresponding script. Each plot and script name is directly related to the derived dataset it represents.
 
--   At the U.S. level analysis, we've generated facet line plots to compare total compensation. The script relies on packages, including `ggplot2`, `ggthemes`, `ggtext`, and `grid` to execute the visualizations.
+-   At the U.S. level analysis, we've generated facet line plots to compare total compensation. The script relies on packages, including `ggplot2`, `ggthemes` and `grid` to execute the visualizations.
 
--   At the state level analysis, we drew a color-coded map to display varying total compensation across different states. Also, we used geographic information about each state stored in the `tigris` package. The script relies on several packages, including `ggplot2`, `ggthemes`, `ggtext`, `grid`, `dplyr`, `sf` and `tigris` to generate the visualizations.
+-   At the state level analysis, we drew a color-coded map to display varying total compensation across different states. Also, we used geographic information about each state stored in the `tigris` package. The script relies on several packages, including `ggplot2`, `grid`, `dplyr`, `sf` and `tigris` to generate the visualizations.
 
 All of these packages can be installed by using `install.packages()` function.
 
