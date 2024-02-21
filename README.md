@@ -19,7 +19,7 @@ The [**raw**](data/raw) folder contains raw data stored in CSV format:
 
 All these files are derived from "Percentiles of income module" of [Income Distributions and Dynamics in America: Data Center](https://www.minneapolisfed.org/institute/income-distributions-and-dynamics-in-america/data-center) on the [Federal Reserve Bank of Minneapolis](https://www.minneapolisfed.org/). Also, a detailed description ([About_data.md](data/raw/About_data.md)) of variables is contained in the same folder.
 
-The [**derived**](data/derived) folder contains processed data, which is more suitable to draw plots. Similarly, please refer to [derived_data.md](data/derived/derived_data.md) for derived process.
+The [**derived**](data/derived) folder contains processed data, which are used for drawing plots (refers to [**outputs**](outputs)). Similarly, please refer to [derived_data.md](data/derived/derived_data.md) for derived process.
 
 The [**data-cleaning**](src/data-cleaning) folder contains scripts used to clean raw data and generate derived data. Each script is named after the derived data it generates, making it easy to identify. The data processing primarily relies on the `dylpr` package.
 
